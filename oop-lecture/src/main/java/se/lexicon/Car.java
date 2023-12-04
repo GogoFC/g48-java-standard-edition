@@ -12,8 +12,15 @@ public class Car { // Template, Blueprint, Model
     private Integer year;
     private double mileage;
 
+    private Person owner;
+
     //....
 
+
+    public Car(String brand, String model) {
+        this.brand = brand;
+        this.model = model;
+    }
 
     //Methods
      public void start(){
@@ -21,7 +28,20 @@ public class Car { // Template, Blueprint, Model
      }
 
      public String carInfo(){
-         return "Car: brand: " + brand + " Model: " + model;
+         StringBuilder stringBuilder = new StringBuilder();
+         stringBuilder.append("Car { ");
+         stringBuilder.append(" Brand:").append(brand);
+         stringBuilder.append(" Model:").append(model);
+
+         if (owner != null){
+             stringBuilder.append(" Owner Info:").append(owner.getPersonInfo());
+         }else {
+             stringBuilder.append(" Owner Info: -");
+         }
+
+         stringBuilder.append(" } ");
+
+         return stringBuilder.toString();
      }
 
      public void drive(double distance){
@@ -67,4 +87,11 @@ public class Car { // Template, Blueprint, Model
          return year;
      }
 
+    public Person getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Person owner) {
+        this.owner = owner;
+    }
 }

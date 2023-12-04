@@ -42,6 +42,7 @@ public class Main {
 */
         //_______________________
 
+        /*
        //Calling a constructor
         Person erik = new Person("Erik", "Svensson", "19900105-1234", 46);
 
@@ -52,8 +53,33 @@ public class Main {
         System.out.println("erik.getPersonInfo() = " + erik.getPersonInfo());
 
 
+         */
+
 //        Person simon = new Person(); //Default constructor not available anymore
 
+
+        // Setting Relationship
+
+        Person simon = new Person("Simon","Elbrink","19970318-0000",26,true);
+
+        Person erik = new Person("Erik", "Svensson", "19900105-1234", 46);
+
+        Car volvo = new Car("Volvo","V60");
+        Car VW = new Car("VW","ID 4");
+
+
+        System.out.println(simon.getPersonInfo());
+        System.out.println(volvo.carInfo());
+
+        volvo.setOwner(simon);
+
+        System.out.println(volvo.carInfo());
+
+
+
+        VW.setOwner(erik);
+
+        System.out.println(VW.carInfo());
 
 
     }
