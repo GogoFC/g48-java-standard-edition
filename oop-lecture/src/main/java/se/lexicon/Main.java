@@ -40,6 +40,19 @@ public class Main {
         System.out.println(VWObj.getColor()); // GRAY
         System.out.println("VWObj.getMileage() = " + VWObj.getMileage()); // 0.0
 
+        //_______________________
+
+        Person erik = new Person();
+
+//        erik.setFirstName("Erik");
+//        erik.setLastName("Svensson");
+//        erik.setAge(9000);
+
+        System.out.println("erik.getPersonInfo() = " + erik.getPersonInfo());
+
+
+
+
 
 
     }
