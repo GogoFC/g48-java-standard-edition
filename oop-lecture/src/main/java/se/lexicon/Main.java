@@ -30,7 +30,7 @@ public class Main {
 
         System.out.println("Mileage= " + VWObj.getMileage());*/
 
-        Car VWObj = new Car();
+/*        Car VWObj = new Car();
 
         VWObj.setBrand("VW");
         VWObj.setModel("ID 4");
@@ -39,10 +39,11 @@ public class Main {
 
         System.out.println(VWObj.getColor()); // GRAY
         System.out.println("VWObj.getMileage() = " + VWObj.getMileage()); // 0.0
-
+*/
         //_______________________
 
-        Person erik = new Person();
+       //Calling a constructor
+        Person erik = new Person("Erik", "Svensson", "19900105-1234", 46);
 
 //        erik.setFirstName("Erik");
 //        erik.setLastName("Svensson");
@@ -51,7 +52,7 @@ public class Main {
         System.out.println("erik.getPersonInfo() = " + erik.getPersonInfo());
 
 
-
+//        Person simon = new Person(); //Default constructor not available anymore
 
 
 

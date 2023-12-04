@@ -9,6 +9,28 @@ public class Person {
     private boolean status;
 
 
+    //Constructor
+    // Purpose: is a special builder method
+    // Used For: Initialize the object's state when an instance of a class is created.
+    // Constructors ensure that objects are created in a consistent and valid initial state
+
+    public Person (String firstName, String lastName, String ssn, int age, boolean status){
+        this(firstName, lastName, ssn, age);
+        this.status = status;
+
+    }
+    public Person (String firstName, String lastName, String ssn, int age){
+        this(firstName, lastName, ssn);
+        setAge(age);
+    }
+    public Person (String firstName, String lastName, String ssn){
+        setFirstName(firstName);
+        setLastName(lastName);
+        setSsn(ssn);
+    }
+
+
+
     public String getFirstName() {
         return firstName;
     }
