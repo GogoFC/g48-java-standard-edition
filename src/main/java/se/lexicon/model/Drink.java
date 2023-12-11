@@ -13,4 +13,9 @@ public class Drink extends Product {
         super.displayInfo();
         System.out.println("Size: " + size);
     }
+
+    @Override
+    public double calculateTaxes() {
+        return getPrice() * 0.2;
+    }
 }

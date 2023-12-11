@@ -15,6 +15,8 @@ public class Burger extends Product{
 
     }
 
-    
-
+    @Override
+    public double calculateTaxes() {
+        return getPrice() * 0.1;
+    }
 }

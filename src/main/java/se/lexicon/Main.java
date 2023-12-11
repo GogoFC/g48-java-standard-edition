@@ -23,5 +23,9 @@ public class Main {
         friesWithoutCheese.displayInfo();
         friesWithChiliCheese.displayInfo();
 
+
+        System.out.println("cheeseBurger.calculateTaxes() = " + cheeseBurger.calculateTaxes());
+        System.out.println("cola.calculateTaxes() = " + cola.calculateTaxes());
+
     }
 }

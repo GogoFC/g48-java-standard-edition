@@ -14,4 +14,9 @@ public class Fries extends Product{
         super.displayInfo();
         System.out.println("CheeseType: " + cheeseType);
     }
+
+    @Override
+    public double calculateTaxes() {
+        return getPrice() * 0.2;
+    }
 }

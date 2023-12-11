@@ -1,6 +1,6 @@
 package se.lexicon.model;
 
-public class Product {
+public abstract class Product {
 
     private String name;
     private double price;
@@ -18,6 +18,8 @@ public class Product {
     public double getPrice(){
         return price;
     }
+
+    public abstract double calculateTaxes();
 
 
 }
