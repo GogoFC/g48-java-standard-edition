@@ -2,10 +2,10 @@ package se.lexicon.model;
 
 public class Fries extends Product{
 
-    private String cheeseType;
+    private CheeseType cheeseType;
 
-    public Fries(String name, double price, String cheeseType) {
-        super(name, price);
+    public Fries(String name, double price, CheeseType cheeseType) {
+        super(name, (price + cheeseType.getPrice()) );
         this.cheeseType = cheeseType;
     }
 
