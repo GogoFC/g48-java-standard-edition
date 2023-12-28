@@ -5,6 +5,7 @@ import se.lexicon.model.Vehicle;
 import java.util.Collection;
 import java.util.Optional;
 
+//Contract
 public interface VehicleDao {
 
     //CRUD = CREATE READ UPDATE DELETE
