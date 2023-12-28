@@ -6,6 +6,7 @@ import se.lexicon.model.Reservation;
 import java.util.Optional;
 
 public class ReservationDaoImpl implements ReservationDao {
+    // TODO - Implement Singleton
     @Override
     public Reservation create(Reservation reservation) {
         //TODO - Implement method

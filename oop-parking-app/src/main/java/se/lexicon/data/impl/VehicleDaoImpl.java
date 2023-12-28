@@ -10,6 +10,8 @@ import java.util.Optional;
 
 public class VehicleDaoImpl implements VehicleDao {
 
+    // TODO - Implement Singleton
+
     private List<Vehicle> storage; // [v1, v2 ,v3, v4]
 
     public VehicleDaoImpl() {

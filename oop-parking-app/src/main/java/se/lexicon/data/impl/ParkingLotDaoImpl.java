@@ -6,6 +6,8 @@ import se.lexicon.model.ParkingLot;
 import java.util.Optional;
 
 public class ParkingLotDaoImpl implements ParkingLotDao {
+
+    // TODO - Implement Singleton
     @Override
     public ParkingLot create(ParkingLot parkingLot) {
         //TODO - Implement method
