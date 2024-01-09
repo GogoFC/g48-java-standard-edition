@@ -1,9 +1,9 @@
-package se.lexicon.stream;
+package se.lexicon.stream_api;
 
 
-import se.lexicon.stream.model.Gender;
-import se.lexicon.stream.model.Person;
-import se.lexicon.stream.service.People;
+import se.lexicon.stream_api.model.Gender;
+import se.lexicon.stream_api.model.Person;
+import se.lexicon.stream_api.service.People;
 
 import java.time.LocalDate;
 import java.util.*;

@@ -1,4 +1,4 @@
-package se.lexicon.stream.model;
+package se.lexicon.stream_api.model;
 
 public class PersonDto {
 

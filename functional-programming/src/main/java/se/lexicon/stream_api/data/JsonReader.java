@@ -1,9 +1,9 @@
-package se.lexicon.stream.data;
+package se.lexicon.stream_api.data;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import se.lexicon.stream.model.Person;
+import se.lexicon.stream_api.model.Person;
 
 
 import java.io.File;

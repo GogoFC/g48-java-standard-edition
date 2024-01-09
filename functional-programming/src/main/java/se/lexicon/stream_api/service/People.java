@@ -1,6 +1,6 @@
-package se.lexicon.stream.service;
+package se.lexicon.stream_api.service;
 
-import se.lexicon.stream.model.Person;
+import se.lexicon.stream_api.model.Person;
 
 import java.util.List;
 
