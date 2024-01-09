@@ -15,7 +15,7 @@ public class StreamDemo {
     private static final List<Person> PEOPLE = People.INSTANCE.getPeople();
 
     public static void main(String[] args) {
-        ex6();
+        ex8();
     }
 
     private static void ex1() {
@@ -133,6 +133,8 @@ public class StreamDemo {
                 .filter(person -> person.getLastName().endsWith("sson"))
                 .filter(person -> person.getFirstName().endsWith("ka"))
 //                .sorted((p1,p2) -> p1.getFirstName().compareTo(p2.getFirstName()))
+//                .sorted((p1,p2) -> p1.getLastName().compareTo(p2.getLastName()))
+//                .sorted((p1,p2) -> p1.getDateOfBirth().compareTo(p2.getDateOfBirth()))
                 .sorted(Comparator.comparing(Person::getFirstName)
                         .thenComparing(Person::getDateOfBirth))
                 .forEach(System.out::println);
