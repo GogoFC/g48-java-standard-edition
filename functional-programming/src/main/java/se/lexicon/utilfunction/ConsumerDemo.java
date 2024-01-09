@@ -37,7 +37,7 @@ public class ConsumerDemo {
 
         Consumer<Account> printAccountDetails = (account) -> System.out.println(account.toString());
 
-//        Consumer<Account> activateAccount = account -> account.activate();
+        Consumer<Account> activateAccount = account -> account.activate();
 
         accounts.forEach(printAccountInfo);
 
@@ -45,9 +45,24 @@ public class ConsumerDemo {
 
 
         System.out.println("------------");
-        accounts.forEach(account -> account.activate());
+//        accounts.forEach(account -> account.activate());
+
+        accounts.forEach(Account::activate);
+
+//        accounts.forEach((account) -> System.out.println(account) );
+        accounts.forEach(System.out::println);
+
+
+
 
         accounts.forEach(printAccountDetails);
+
+
+
+
+
+
+
 
 
 

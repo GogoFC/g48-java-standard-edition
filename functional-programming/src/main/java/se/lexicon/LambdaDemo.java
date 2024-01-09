@@ -46,6 +46,7 @@ public class LambdaDemo {
         System.out.println(randomNumberOperator.generate());
         System.out.println("------------------------------");
         Printer printMessage = message -> System.out.println(message);
+//        Printer printMessage = System.out::println;
         printMessage.print("Hello Group!");
 
 
