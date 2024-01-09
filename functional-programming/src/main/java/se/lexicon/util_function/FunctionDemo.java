@@ -1,7 +1,10 @@
-package se.lexicon.utilfunction;
+package se.lexicon.util_function;
+
+import se.lexicon.functional_interfaces.LambdaDemo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 public class FunctionDemo {
     public static void main(String[] args) {
@@ -45,9 +48,20 @@ public class FunctionDemo {
 
 
 
+        //T = Parameter 1 = Integer
+        //U = Parameter 2 = Integer
+        //R = Return = Integer
+
+//        BiFunction<Integer, Integer ,Integer> addition = (a, b) -> add(a,b);
+        BiFunction<Integer, Integer ,Integer> addition = FunctionDemo::add;
+
+
 
 
     }
+
+    public static int add(int number1, int number2) {return number1 + number2;}
+
 
     public static List<String> applyToList (List<Account> accountList, Function<Account ,String> extract){
         List<String> newextractedList = new ArrayList<>();

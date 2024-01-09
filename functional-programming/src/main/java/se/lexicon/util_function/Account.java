@@ -1,4 +1,4 @@
-package se.lexicon.utilfunction;
+package se.lexicon.util_function;
 
 import java.time.LocalDate;
 
