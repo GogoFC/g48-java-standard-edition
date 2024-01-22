@@ -94,7 +94,7 @@ public class JDBCExample {
 
         try (
                 Connection connection = MySQLConnection.getConnection();
-                PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+                PreparedStatement preparedStatement = connection.prepareStatement(insertQuery, PreparedStatement.RETURN_GENERATED_KEYS);
         ) {
 
             preparedStatement.setString(1, student.getFirstName());
@@ -106,6 +106,14 @@ public class JDBCExample {
 
             if (rowsAffected > 0){
                 System.out.println("Student created successfully!");
+            }
+
+
+            try(ResultSet generatedKeys = preparedStatement.getGeneratedKeys()){
+                if (generatedKeys.next()){
+                    int generatedStudentId = generatedKeys.getInt(1);
+                    System.out.println("generatedStudentId = " + generatedStudentId);
+                }
             }
 
 
