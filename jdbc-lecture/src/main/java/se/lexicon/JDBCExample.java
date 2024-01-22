@@ -11,7 +11,7 @@ import java.util.List;
 public class JDBCExample {
 
     public static void main(String[] args) {
-        ex2();
+        ex3();
     }
 
     // get All student data
@@ -86,4 +86,53 @@ public class JDBCExample {
         System.out.println(student);
 
     }
+
+    public static void ex3() {
+
+        Student student = new Student("Test", "Testsson", 20, "test.testsson@test.te");
+        String insertQuery = "INSERT INTO students (first_name, last_name, age, email) VALUES(?,?,?,?)";
+
+        try (
+                Connection connection = MySQLConnection.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
+        ) {
+
+            preparedStatement.setString(1, student.getFirstName());
+            preparedStatement.setString(2, student.getLastName());
+            preparedStatement.setInt(3, student.getAge());
+            preparedStatement.setString(4, student.getEmail());
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0){
+                System.out.println("Student created successfully!");
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
