@@ -11,7 +11,7 @@ import java.util.List;
 public class JDBCExample {
 
     public static void main(String[] args) {
-        ex3();
+        ex4();
     }
 
     // get All student data
@@ -104,16 +104,82 @@ public class JDBCExample {
 
             int rowsAffected = preparedStatement.executeUpdate();
 
-            if (rowsAffected > 0){
+            if (rowsAffected > 0) {
                 System.out.println("Student created successfully!");
             }
 
 
-            try(ResultSet generatedKeys = preparedStatement.getGeneratedKeys()){
-                if (generatedKeys.next()){
+            try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
                     int generatedStudentId = generatedKeys.getInt(1);
                     System.out.println("generatedStudentId = " + generatedStudentId);
                 }
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    // create student + assign student to the course
+    public static void ex4() {
+
+        Student student = new Student("Test", "Testsson", 20, "test.testsson@test.te");
+        String insertQueryStudent = "INSERT INTO students (first_name, last_name, age, email) VALUES(?,?,?,?)";
+        String insertQueryCourseRelationship = "INSERT INTO student_courses (student_id, course_id) VALUES(?,?)";
+
+
+        try (
+                Connection connection = MySQLConnection.getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(insertQueryStudent, PreparedStatement.RETURN_GENERATED_KEYS);
+        ) {
+
+            //Prepares the Query with Data to insert into DB
+            preparedStatement.setString(1, student.getFirstName());
+            preparedStatement.setString(2, student.getLastName());
+            preparedStatement.setInt(3, student.getAge());
+            preparedStatement.setString(4, student.getEmail());
+
+            //Execute Insert - Return number of rows affected.
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Student created successfully!");
+            }else {
+                throw new RuntimeException("Insert Operation in (student) table failed!");
+            }
+
+
+            try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    int generatedStudentId = generatedKeys.getInt(1);
+                    System.out.println("generatedStudentId = " + generatedStudentId);
+
+
+                    //add relationship between student and course
+                    try (PreparedStatement preparedStatementForCourse = connection.prepareStatement(insertQueryCourseRelationship)) {
+
+                        int courseId = 3;
+                        preparedStatementForCourse.setInt(1, generatedStudentId);// studentID
+                        preparedStatementForCourse.setInt(2, courseId);
+
+                        int insertedRows = preparedStatementForCourse.executeUpdate();
+
+                        if (insertedRows > 0){
+                            System.out.println("Assigning course to student is done successfully!");
+                        }else {
+                            throw new RuntimeException("Insert Operation in (students_courses) table failed!");
+                        }
+
+                    }
+
+                }
+
+
             }
 
 
