@@ -132,11 +132,13 @@ public class JDBCExample {
         String insertQueryStudent = "INSERT INTO students (first_name, last_name, age, email) VALUES(?,?,?,?)";
         String insertQueryCourseRelationship = "INSERT INTO student_courses (student_id, course_id) VALUES(?,?)";
 
+        Connection connection = MySQLConnection.getConnection();
 
         try (
-                Connection connection = MySQLConnection.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(insertQueryStudent, PreparedStatement.RETURN_GENERATED_KEYS);
         ) {
+
+            connection.setAutoCommit(false);
 
             //Prepares the Query with Data to insert into DB
             preparedStatement.setString(1, student.getFirstName());
@@ -149,42 +151,56 @@ public class JDBCExample {
 
             if (rowsAffected > 0) {
                 System.out.println("Student created successfully!");
-            }else {
+            } else {
+                System.out.println("Rollback Student Insert");
+                connection.rollback();
                 throw new RuntimeException("Insert Operation in (student) table failed!");
             }
 
 
+            int generatedStudentId = 0;
             try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
-                    int generatedStudentId = generatedKeys.getInt(1);
+                    generatedStudentId = generatedKeys.getInt(1);
                     System.out.println("generatedStudentId = " + generatedStudentId);
 
-
-                    //add relationship between student and course
-                    try (PreparedStatement preparedStatementForCourse = connection.prepareStatement(insertQueryCourseRelationship)) {
-
-                        int courseId = 3;
-                        preparedStatementForCourse.setInt(1, generatedStudentId);// studentID
-                        preparedStatementForCourse.setInt(2, courseId);
-
-                        int insertedRows = preparedStatementForCourse.executeUpdate();
-
-                        if (insertedRows > 0){
-                            System.out.println("Assigning course to student is done successfully!");
-                        }else {
-                            throw new RuntimeException("Insert Operation in (students_courses) table failed!");
-                        }
-
-                    }
-
                 }
-
-
             }
 
+            //add relationship between student and course
+            try (PreparedStatement preparedStatementForCourse = connection.prepareStatement(insertQueryCourseRelationship)) {
+
+                //If course is wrong, Rollback. Ex. Id. 20
+                int courseId = 3;
+                preparedStatementForCourse.setInt(1, generatedStudentId);// studentID
+                preparedStatementForCourse.setInt(2, courseId);
+
+                int insertedRows = preparedStatementForCourse.executeUpdate();
+
+                if (insertedRows > 0) {
+                    System.out.println("Assigning course to student is done successfully!");
+                } else {
+                    throw new RuntimeException("Insert Operation in (students_courses) table failed!");
+                }
+
+            } catch (SQLException | RuntimeException e) {
+                System.out.println("Rollback Relationship connection");
+                connection.rollback();
+                e.printStackTrace();
+            }
+
+            //Commit - Save changes to database.
+            connection.setAutoCommit(true);
 
         } catch (SQLException e) {
             e.printStackTrace();
+
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                System.out.println("Rollback - General");
+                ex.printStackTrace();
+            }
         }
 
 
