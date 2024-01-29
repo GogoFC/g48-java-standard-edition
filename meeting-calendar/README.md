@@ -18,15 +18,14 @@ In this console-based project, we plan to implement the following core functiona
 
 8. **Data Persistence:** All user account data, calendars, and meetings will be stored in a relational database using SQL.
 
-9. **Exception Handling:** Proper exception handling will be implemented to handle potential errors gracefully.
+9. **Database Interaction:** The application will use JDBC to interact with the database, including creating, reading, updating, and deleting records.
 
-10. **⁕User-Friendly Console Interface:** The application will provide a user-friendly console interface for interacting with the calendar and performing various actions.
+10. **Exception Handling:** Proper exception handling will be implemented to handle potential errors gracefully.
 
-11. **⁕Security** Passwords will be securely hashed and stored in the database to protect user account information.
+11. **Stream Processing:** Stream processing _may_ be used for tasks like filtering, sorting, and summarizing meeting data.
 
-12. **⁕Logging:** Logging will be implemented to keep track of important events and errors for debugging and monitoring purposes.
+12. **⁕User-Friendly Console Interface:** The application will provide a user-friendly console interface for interacting with the calendar and performing various actions.
 
-13. **Database Interaction:** The application will use JDBC to interact with the database, including creating, reading, updating, and deleting records.
+13. **⁕Security** Passwords will be securely hashed and stored in the database to protect user account information.
 
-14. **Stream Processing:** Stream processing _may_ be used for tasks like filtering, sorting, and summarizing meeting data.
-
+14. **⁕Logging:** Logging will be implemented to keep track of important events and errors for debugging and monitoring purposes.
