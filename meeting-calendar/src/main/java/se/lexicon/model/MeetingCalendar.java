@@ -3,7 +3,7 @@ package se.lexicon.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MeetingCalender {
+public class MeetingCalendar {
     private int id;
     private String username;
     private String title;
@@ -40,7 +40,7 @@ public class MeetingCalender {
         meetings.remove(meeting);
     }
 
-    public void displayMeetingCalenderInfo(){
+    public void displayMeetingCalendarInfo(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Calendar Info:").append("\n");
         stringBuilder.append("Id ").append(id).append("\n");

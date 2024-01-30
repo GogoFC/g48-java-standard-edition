@@ -9,7 +9,7 @@ public class Meeting {
     private LocalDateTime startTime; // 2020-01-01 10:00
     private LocalDateTime endTime; // 2019-01-01 12:00
     private String description;
-    private MeetingCalender calendar;
+    private MeetingCalendar calendar;
 
     // TODO Constructors - Chaining
 
@@ -33,7 +33,7 @@ public class Meeting {
         return description;
     }
 
-    public MeetingCalender  getCalendar() {
+    public MeetingCalendar getCalendar() {
         return calendar;
     }
 
