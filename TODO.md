@@ -9,6 +9,13 @@
 - [x] Create interfaces
 - [x] Create custom exceptions
 
-- [ ] Create SQL Tables *
+- [x] Create SQL Tables *
 - [ ] Create database connection class
 - [ ] Create custom exception
+
+- [ ] IMPL DAO
+
+
+Meeting - Update, Delete, Create, Find
+MeetingCalender - Update, Delete, Create, Find
+User - Update, Delete, Create, Find
