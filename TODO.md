@@ -3,7 +3,7 @@
 - [x] Define Project
 - [x] Define models
 - [x] Create class diagram
-- [-] Implement models * 30min impl 2 other models
+- [X] Implement models * Students Implement 2 other models - 30min
 
 - [ ] Define data layer
 - [ ] Create interfaces
