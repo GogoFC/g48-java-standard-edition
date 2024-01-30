@@ -9,8 +9,22 @@ public class MeetingCalendar {
     private String title;
     private List<Meeting> meetings;
 
+    // More fields could be added...
 
-    // TODO Constructors
+    public MeetingCalendar(String username, String title) {
+        this(title);
+        this.username = username;
+
+    }
+
+    public MeetingCalendar(String title) {
+        this.title = title;
+    }
+
+    public MeetingCalendar(int id, String username, String title) {
+        this(username, title);
+        this.id = id;
+    }
 
     public int getId() {
         return id;

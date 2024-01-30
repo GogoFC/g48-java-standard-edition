@@ -8,6 +8,8 @@ public class User {
    private final String username;
    private String password;
 
+    // WHO IS THIS? = More fields?
+
     public User(String username) {
         this.username = username;
         newPassword();

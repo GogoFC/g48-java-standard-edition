@@ -11,7 +11,32 @@ public class Meeting {
     private String description;
     private MeetingCalendar calendar;
 
-    // TODO Constructors - Chaining
+    //More Fields -- Attendees, Meeting creator, etc..
+
+
+    public Meeting(String title, LocalDateTime startTime, LocalDateTime endTime, String description) {
+        this.title = title;
+        this.startTime = startTime;
+        this.endTime = endTime;
+        this.description = description;
+    }
+
+    public Meeting(String title, LocalDateTime startTime, LocalDateTime endTime, String description, MeetingCalendar calendar) {
+        this(title, startTime, endTime, description);
+        this.calendar = calendar;
+    }
+
+    public Meeting(int id, String title, LocalDateTime startTime, LocalDateTime endTime, String description, MeetingCalendar calendar) {
+        this(id, title, startTime, endTime, description);
+        this.calendar = calendar;
+    }
+
+    public Meeting(int id, String title, LocalDateTime startTime, LocalDateTime endTime, String description) {
+        this(title, startTime, endTime, description);
+        this.id = id;
+    }
+
+
 
     public int getId() {
         return id;
@@ -47,6 +72,10 @@ public class Meeting {
         stringBuilder.append("Description ").append(description).append("\n");
 
         System.out.println(stringBuilder.toString());
+    }
+
+    private void timeValidation(){
+        //TODO: IMPL VALIDATION LATER
     }
 
 
