@@ -41,5 +41,14 @@ public class User {
         return stringBuilder.toString();
     }
 
+    public void displayUserInfo(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("User Info:").append("\n");
+        stringBuilder.append("username ").append(username).append("\n");
+        stringBuilder.append("password ").append(password).append("\n");
+
+        System.out.println(stringBuilder.toString());
+    }
+
 
 }
