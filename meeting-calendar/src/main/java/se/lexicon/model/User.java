@@ -8,6 +8,8 @@ public class User {
    private final String username;
    private String password;
 
+   private boolean expired;
+
     // WHO IS THIS? = More fields?
 
     public User(String username) {
@@ -15,6 +17,11 @@ public class User {
         newPassword();
     }
 
+    public User(String username, String password, boolean expired) {
+        this.username = username;
+        this.password = password;
+        this.expired = expired;
+    }
 
     public String getUsername() {
         return username;
@@ -26,6 +33,10 @@ public class User {
 
     public void newPassword(){
         this.password = generateRandomPassword();
+    }
+
+    public boolean isExpired() {
+        return expired;
     }
 
     private String generateRandomPassword(){
