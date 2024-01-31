@@ -14,7 +14,8 @@
 - [x] Create custom exception
 - [ ] Create Exception Handler (ConsoleColors)
 
-- [ ] IMPL DAO
+- [ ] IMPL DAO QUERIES * Students Implement 2 other DAO QUERIES - 20min
+- [ ] IMPL DAO 
 
 
 Meeting - Update, Delete, Create, Find

@@ -7,7 +7,8 @@ import java.util.Optional;
 
 public interface MeetingDao {
 
-    // TODO: Implement SQL query to insert a new meeting into the database
+    // TODO - Write Queries to perform the following behaviors
+    //  Implement SQL query to insert a new meeting into the database
     String CREATE_MEETING_SQL = "";
 
     // TODO: Implement SQL query to find a meeting by its ID in the database
