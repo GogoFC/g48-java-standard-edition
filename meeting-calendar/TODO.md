@@ -14,7 +14,7 @@
 - [x] Create custom exception
 - [ ] Create Exception Handler (ConsoleColors)
 
-- [ ] IMPL DAO QUERIES * Students Implement 2 other DAO QUERIES - 20min
+- [x] IMPL DAO QUERIES * Students Implement 2 other DAO QUERIES - 20min
 - [ ] IMPL DAO 
 
 
