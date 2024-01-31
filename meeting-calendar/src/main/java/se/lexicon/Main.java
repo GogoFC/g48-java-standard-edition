@@ -20,12 +20,15 @@ public class Main {
 //        User simon = userDao.createUser("simon-lexicon");
         Optional<User> simon = userDao.findByUsername("simon-lexicon");
 
-//        simon.ifPresentOrElse(User::displayUserInfo,()-> System.out.println("There is no user found"));
-        User simonObject = simon.get();
+        Optional<User> alice = userDao.findByUsername("Alice");
+
+        simon.ifPresentOrElse(User::displayUserInfo,()-> System.out.println("There is no user found"));
+        alice.ifPresentOrElse(User::displayUserInfo,()-> System.out.println("There is no user found"));
 
         try {
+            boolean isAuthenticated = userDao.authenticate(alice.get());
 
-            userDao.authenticate(simonObject);
+            System.out.println(isAuthenticated);
 
         } catch (UserExpiredException | AuthorizationFailedException e) {
             throw new RuntimeException(e);
