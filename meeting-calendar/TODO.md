@@ -10,8 +10,9 @@
 - [x] Create custom exceptions
 
 - [x] Create SQL Tables *
-- [ ] Create database connection class
-- [ ] Create custom exception
+- [x] Create database connection
+- [x] Create custom exception
+- [ ] Create Exception Handler (ConsoleColors)
 
 - [ ] IMPL DAO
 
