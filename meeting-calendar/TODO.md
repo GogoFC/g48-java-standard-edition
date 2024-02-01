@@ -19,8 +19,15 @@
 ## Interact with Application
 - [ ] Register User
 - [ ] Login User
-- [ ] Create Meeting Calenders
+
+> It should only be possible when Signed In
+- [ ] Create Meeting Calendars
 - [ ] Create Meeting
+- [ ] Delete Meeting
+- [ ] Display Calendar Meeting 
+- [ ] Logout
+
+
 
 Meeting - Update, Delete, Create, Find
 MeetingCalender - Update, Delete, Create, Find
