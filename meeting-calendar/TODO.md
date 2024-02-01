@@ -18,7 +18,7 @@
 
 ## Interact with Application
 - [ ] Register User
-- [ ] Login User
+- [x] Login User
 
 > It should only be possible when Signed In
 - [ ] Create Meeting Calendars

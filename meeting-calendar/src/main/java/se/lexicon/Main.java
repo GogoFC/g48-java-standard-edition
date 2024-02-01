@@ -5,36 +5,33 @@ import se.lexicon.dao.impl.UserDaoImpl;
 import se.lexicon.dao.impl.db.MeetingCalendarMysqlConnection;
 import se.lexicon.exception.CalendarExceptionHandler;
 import se.lexicon.model.User;
+import se.lexicon.view.CalendarView;
+import se.lexicon.view.CalenderConsoleUI;
 
 import java.sql.Connection;
-import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
 
         Connection connection = MeetingCalendarMysqlConnection.getConnection();
-
         UserDao userDao = new UserDaoImpl(connection);
+        CalendarView calendarView = new CalenderConsoleUI();
 
-//        User simon = userDao.createUser("simon-lexicon");
-        Optional<User> simon = userDao.findByUsername("simon-lexicon");
-
-        Optional<User> alice = userDao.findByUsername("Alice");
-
-        //Print user information or print "no user found"
-        simon.ifPresentOrElse((u)-> System.out.println(u.UserInfo()), ()-> System.out.println("There is no user found"));
-        alice.ifPresentOrElse((u)-> System.out.println(u.UserInfo()), ()-> System.out.println("There is no user found"));
+        User user = calendarView.promoteUserFormSignIn();
 
         try {
-            boolean isAuthenticated = userDao.authenticate(alice.get());
-//            boolean isAuthenticated = userDao.authenticate(new User("foo", "bar",true));
+            boolean isAuthenticated = userDao.authenticate(user);
 
-            System.out.println(isAuthenticated);
+            if (isAuthenticated){
+                calendarView.displaySuccessMessage("Login Success.");
+            }
+
+            calendarView.displayUser(user);
+
 
         } catch (Exception e) {
             CalendarExceptionHandler.handleException(e);
         }
-
 
     }
 }
