@@ -17,6 +17,10 @@ public class User {
         newPassword();
     }
 
+    public User(String username, String password) {
+        this(username, password, false);
+    }
+
     public User(String username, String password, boolean expired) {
         this.username = username;
         this.password = password;
@@ -54,13 +58,13 @@ public class User {
         return stringBuilder.toString();
     }
 
-    public void displayUserInfo(){
+    public String UserInfo(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("User Info:").append("\n");
         stringBuilder.append("username ").append(username).append("\n");
         stringBuilder.append("password ").append(password).append("\n");
 
-        System.out.println(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 
 

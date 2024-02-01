@@ -62,7 +62,7 @@ public class Meeting {
         return calendar;
     }
 
-    public void displayMeetingInfo(){
+    public String MeetingInfo(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Meeting Info:").append("\n");
         stringBuilder.append("Id ").append(id).append("\n");
@@ -71,7 +71,7 @@ public class Meeting {
         stringBuilder.append("EndTime ").append(endTime).append("\n");
         stringBuilder.append("Description ").append(description).append("\n");
 
-        System.out.println(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 
     private void timeValidation(){

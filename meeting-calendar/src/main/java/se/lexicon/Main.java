@@ -21,8 +21,9 @@ public class Main {
 
         Optional<User> alice = userDao.findByUsername("Alice");
 
-        simon.ifPresentOrElse(User::displayUserInfo,()-> System.out.println("There is no user found"));
-        alice.ifPresentOrElse(User::displayUserInfo,()-> System.out.println("There is no user found"));
+        //Print user information or print "no user found"
+        simon.ifPresentOrElse((u)-> System.out.println(u.UserInfo()), ()-> System.out.println("There is no user found"));
+        alice.ifPresentOrElse((u)-> System.out.println(u.UserInfo()), ()-> System.out.println("There is no user found"));
 
         try {
             boolean isAuthenticated = userDao.authenticate(alice.get());

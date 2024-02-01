@@ -54,14 +54,14 @@ public class MeetingCalendar {
         meetings.remove(meeting);
     }
 
-    public void displayMeetingCalendarInfo(){
+    public String MeetingCalendarInfo(){
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("Calendar Info:").append("\n");
         stringBuilder.append("Id ").append(id).append("\n");
         stringBuilder.append("Title ").append(title).append("\n");
         stringBuilder.append("Username ").append(username).append("\n");
 
-        System.out.println(stringBuilder.toString());
+        return stringBuilder.toString();
     }
 
 }
