@@ -9,7 +9,7 @@ public interface MeetingDao {
 
     String CREATE_MEETING_SQL = "INSERT INTO MEETINGS (TITLE, START_TIME, END_TIME, _DESCRIPTION) VALUES (?,?,?,?)";
 
-    String FIND_BY_ID_SQL = "SELECT * FROM MEETINGS WHERE ID = ?";
+    String FIND_BY_ID_SQL = "SELECT m.*, mc.username as username, mc.title as calendarTitle FROM meetings m inner join meeting_calendars mc on m.calendar_id = mc.id WHERE m.id = ?";
 
     String FIND_ALL_BY_CALENDAR_ID_SQL = " SELECT * FROM MEETINGS WHERE CALENDAR_ID = ?";
 
@@ -20,7 +20,7 @@ public interface MeetingDao {
 
     Optional<Meeting> findById(int meetingId);
 
-    Collection<Meeting> findAllMeetingsByCalenderId(int calenderId);
+    Collection<Meeting> findAllMeetingsByCalendarId(int calenderId);
 
     //More Find Methods
 
