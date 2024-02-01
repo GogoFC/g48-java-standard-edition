@@ -1,6 +1,6 @@
 package se.lexicon.dao.impl;
 
-import se.lexicon.dao.MeetingCalenderDao;
+import se.lexicon.dao.MeetingCalendarDao;
 import se.lexicon.exception.MySQLException;
 import se.lexicon.model.MeetingCalendar;
 
@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public class MeetingCalendarDaoImpl implements MeetingCalenderDao {
+public class MeetingCalendarDaoImpl implements MeetingCalendarDao {
 
     private Connection connection;
 

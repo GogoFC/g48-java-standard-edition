@@ -17,11 +17,11 @@
 - [x] IMPL DAO * Students Implement 2 other DAO's. — until Tomorrow. (Optional)
 
 ## Interact with Application
-- [ ] Register User
+- [x] Register User
 - [x] Login User
 
 > It should only be possible when Signed In
-- [ ] Create Meeting Calendars
+- [x] Create Meeting Calendars
 - [ ] Create Meeting
 - [ ] Delete Meeting
 - [ ] Display Calendar Meeting 

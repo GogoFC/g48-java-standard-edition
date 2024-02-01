@@ -26,8 +26,6 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User createUser(String username) {
-        System.out.println("inside Create Method");
-
 
         //INSERT INTO USERS (USERNAME, _PASSWORD) VALUES(?, ?)
         try(PreparedStatement preparedStatement = connection.prepareStatement(UserDao.CREATE_USER_SQL)){
@@ -41,7 +39,6 @@ public class UserDaoImpl implements UserDao {
                 throw new MySQLException("Creating user Failed, no row Affected");
             }
 
-            System.out.println("User Created Successfully");
             return user;
 
         }catch (SQLException e){

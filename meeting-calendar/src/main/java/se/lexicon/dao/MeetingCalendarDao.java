@@ -5,7 +5,7 @@ import se.lexicon.model.MeetingCalendar;
 import java.util.Collection;
 import java.util.Optional;
 
-public interface MeetingCalenderDao {
+public interface MeetingCalendarDao {
 
     String CREATE_MEETING_CALENDAR_SQL = "INSERT INTO meeting_calendars (USERNAME, TITLE) VALUES(?,?)";
 
