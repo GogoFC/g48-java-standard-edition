@@ -3,8 +3,7 @@ package se.lexicon;
 import se.lexicon.dao.UserDao;
 import se.lexicon.dao.impl.UserDaoImpl;
 import se.lexicon.dao.impl.db.MeetingCalendarMysqlConnection;
-import se.lexicon.exception.AuthorizationFailedException;
-import se.lexicon.exception.UserExpiredException;
+import se.lexicon.exception.CalendarExceptionHandler;
 import se.lexicon.model.User;
 
 import java.sql.Connection;
@@ -27,11 +26,12 @@ public class Main {
 
         try {
             boolean isAuthenticated = userDao.authenticate(alice.get());
+//            boolean isAuthenticated = userDao.authenticate(new User("foo", "bar",true));
 
             System.out.println(isAuthenticated);
 
-        } catch (UserExpiredException | AuthorizationFailedException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            CalendarExceptionHandler.handleException(e);
         }
 
 

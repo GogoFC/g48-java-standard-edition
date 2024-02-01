@@ -12,7 +12,7 @@
 - [x] Create SQL Tables *
 - [x] Create database connection
 - [x] Create custom exception
-- [ ] Create Exception Handler (ConsoleColors)
+- [x] Create Exception Handler (ConsoleColors)
 
 - [x] IMPL DAO QUERIES * Students Implement 2 other DAO QUERIES - 20min
 - [x] IMPL DAO * Students Implement 2 other DAO's. — until Tomorrow. (Optional)
