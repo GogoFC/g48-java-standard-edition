@@ -1,5 +1,4 @@
-# TASKS 
-
+# TASKS
 - [x] Define Project
 - [x] Define models
 - [x] Create class diagram
@@ -17,6 +16,11 @@
 - [x] IMPL DAO QUERIES * Students Implement 2 other DAO QUERIES - 20min
 - [x] IMPL DAO * Students Implement 2 other DAO's. — until Tomorrow. (Optional)
 
+## Interact with Application
+- [ ] Register User
+- [ ] Login User
+- [ ] Create Meeting Calenders
+- [ ] Create Meeting
 
 Meeting - Update, Delete, Create, Find
 MeetingCalender - Update, Delete, Create, Find
